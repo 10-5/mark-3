@@ -54,9 +54,9 @@ const fontFamily = undefined;
 const lineHeight = undefined;
 
 /**
- * @type {import('vscode').Selection}
+ * @type {readonly import('vscode').Selection[]}
  */
-const selection = undefined;
+const selections = undefined;
 
 /**
  * @type {boolean}
@@ -100,7 +100,7 @@ const state = {
     lineHeight,
     decorators,
     config,
-    selection,
+    selections,
     enabled,
     types,
     autoImagePreview,

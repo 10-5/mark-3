@@ -62,8 +62,14 @@ function addDecoration(decoration, startOffset, endOffset) {
 function setDecorations() {
     for (let [decoration, ranges] of state.decorationRanges) {
         // console.log("decoration RANGES", [decoration, ranges]);
-        if (state.config.cursorDisables) {
-            ranges = ranges.filter((r) => !state.selection.intersection(r));
+        if (state.config.cursorDisables && state.selections) {
+            let document = state.activeEditor.document;
+            for (let selection of state.selections) {
+                let range = document.lineAt(selection.start).range;
+                let end = document.lineAt(selection.end).range.end;
+                range = range.with(undefined, end);
+                ranges = ranges.filter((r) => !range.intersection(r));
+            }
         }
         state.activeEditor.setDecorations(decoration, ranges);
         if (ranges.length == 0) {

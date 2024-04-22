@@ -636,7 +636,7 @@ function activate(context) {
     vscode.window.onDidChangeTextEditorSelection(
         (e) => {
             if (state.activeEditor) {
-                state.selection = e.selections[0];
+                state.selections = e.selections;
                 triggerUpdateDecorations();
             }
         },
