@@ -1,9 +1,9 @@
 {
-    "name": "markless",
-    "publisher": "tejasvi",
-    "displayName": "Markless",
+    "name": "mark3",
+    "publisher": "10-5",
+    "displayName": "Mark 3",
     "description": "Inline markdown preview.  Vim mode and WYSIWYG mermaid, latex and image rendering.",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "engines": {
         "vscode": "^1.56.0"
     },
@@ -23,16 +23,16 @@
         "typora"
     ],
     "author": {
-        "name": "Tejasvi S. Tomar",
-        "url": "https://mefyi.com"
+        "name": "10-5",
+        "url": "https://github.com/10-5"
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/tejasvi/markless"
+        "url": "https://github.com/10-5/mark3"
     },
     "icon": "assets/icon.png",
     "bugs": {
-        "url": "https://github.com/tejasvi/markless"
+        "url": "https://github.com/10-5/mark3"
     },
     "activationEvents": [
         "onLanguage:markdown"
@@ -42,14 +42,14 @@
         "viewsContainers": {
             "activitybar": [
                 {
-                    "id": "markless",
+                    "id": "mark3",
                     "icon": "assets/activityBar.svg",
                     "title": ""
                 }
             ]
         },
         "views": {
-            "markless": [
+            "mark3": [
                 {
                     "type": "webview",
                     "id": "test.webview",
@@ -60,7 +60,7 @@
         },
         "keybindings": [
             {
-                "command": "markless.toggle",
+                "command": "mark3.toggle",
                 "key": "ctrl+shift+m",
                 "when": "resourceLangId == markdown"
             }
@@ -71,9 +71,9 @@
                 "title": "Eval webview"
             },
             {
-                "command": "markless.toggle",
+                "command": "mark3.toggle",
                 "title": "Toggle Inline Preview",
-                "category": "Markless",
+                "category": "Mark 3",
                 "enablement": "resourceLangId == markdown",
                 "icon": {
                     "dark": "./assets/toggle.svg",
@@ -85,86 +85,86 @@
             "editor/title": [
                 {
                     "when": "resourceLangId == markdown",
-                    "command": "markless.toggle",
+                    "command": "mark3.toggle",
                     "group": "navigation"
                 }
             ]
         },
         "configuration": [
             {
-                "title": "Markless",
+                "title": "Mark 3",
                 "properties": {
-                    "markless.emphasis": {
+                    "mark3.emphasis": {
                         "description": "Decorate bold, italics and strikethrough",
                         "type": "boolean",
                         "default": true
                     },
-                    "markless.heading": {
+                    "mark3.heading": {
                         "description": "Decorate headings",
                         "type": "boolean",
                         "default": true
                     },
-                    "markless.horizontalRule": {
+                    "mark3.horizontalRule": {
                         "description": "Decorate horizontal rule",
                         "type": "boolean",
                         "default": true
                     },
-                    "markless.inlineCode": {
+                    "mark3.inlineCode": {
                         "description": "Decorate inline code",
                         "type": "boolean",
                         "default": true
                     },
-                    "markless.inlineImage.enabled": {
+                    "mark3.inlineImage.enabled": {
                         "description": "Enable image preview",
                         "type": "boolean",
                         "default": true
                     },
-                    "markless.inlineImage.autoPreview": {
+                    "mark3.inlineImage.autoPreview": {
                         "description": "Preview images automatically",
                         "type": "boolean",
                         "default": true
                     },
-                    "markless.mermaid": {
+                    "mark3.mermaid": {
                         "description": "Render mermaid diagrams",
                         "type": "boolean",
                         "default": true
                     },
-                    "markless.latex": {
+                    "mark3.latex": {
                         "description": "Render LaTeX",
                         "type": "boolean",
                         "default": true
                     },
-                    "markless.list": {
+                    "mark3.list": {
                         "description": "Decorate lists",
                         "type": "boolean",
                         "default": true
                     },
-                    "markless.quote": {
+                    "mark3.quote": {
                         "description": "Decorate quotes",
                         "type": "boolean",
                         "default": true
                     },
-                    "markless.table": {
+                    "mark3.table": {
                         "description": "Render tables",
                         "type": "boolean",
                         "default": true
                     },
-                    "markless.html": {
+                    "mark3.html": {
                         "description": "Decorate HTML tags",
                         "type": "boolean",
                         "default": true
                     },
-                    "markless.link": {
+                    "mark3.link": {
                         "description": "Decorate link and image urls",
                         "type": "boolean",
                         "default": true
                     },
-                    "markless.hoverImage": {
+                    "mark3.hoverImage": {
                         "description": "Preview image on hover",
                         "type": "boolean",
                         "default": true
                     },
-                    "markless.cursorDisables": {
+                    "mark3.cursorDisables": {
                         "description": "Disable concealment around the cursor and selection",
                         "type": "boolean",
                         "default": true
@@ -206,8 +206,8 @@
         "vscode-test": "^1.5.0"
     },
     "__metadata": {
-        "id": "31b769d3-ba13-4af3-a7e8-5257e0df28b1",
-        "publisherDisplayName": "Tejasvi S. Tomar",
-        "publisherId": "48cdae1f-c60f-474f-95a2-86dd106fcb49"
+        "id": "00000000-0000-0000-0000-000000000000",
+        "publisherDisplayName": "10-5",
+        "publisherId": "00000000-0000-0000-0000-000000000000"
     }
 }

@@ -5,7 +5,7 @@ const { memoize, nodeToHtml, svgToUri, htmlToSvg, DefaultMap, texToSvg, enableHo
 const { triggerUpdateDecorations, addDecoration, posToRange } = require('./runner');
 const cheerio = require('cheerio');
 
-let config = vscode.workspace.getConfiguration('markless');
+let config = vscode.workspace.getConfiguration('mark3');
 
 function enableLineRevealAsSignature(context) {
     context.subscriptions.push(
@@ -117,7 +117,7 @@ function registerWebviewViewProvider(context) {
         )
     );
     vscode.commands
-        .executeCommand('workbench.view.extension.markless')
+        .executeCommand('workbench.view.extension.mark3')
         .then(() => vscode.commands.executeCommand('workbench.view.explorer'));
 }
 
@@ -584,7 +584,7 @@ function activate(context) {
         enableHoverImage(context);
     }
     enableLineRevealAsSignature(context);
-    context.subscriptions.push(vscode.commands.registerCommand('markless.toggle', toggle));
+    context.subscriptions.push(vscode.commands.registerCommand('mark3.toggle', toggle));
     state.imageList = [];
     state.commentController = vscode.comments.createCommentController('inlineImage', 'Show images inline');
     context.subscriptions.push(state.commentController);
@@ -636,7 +636,7 @@ function activate(context) {
 
     vscode.workspace.onDidChangeConfiguration(
         (e) => {
-            if (['markless', 'workbench.colorTheme', 'editor.fontSize'].some((c) => e.affectsConfiguration(c))) {
+            if (['mark3', 'workbench.colorTheme', 'editor.fontSize'].some((c) => e.affectsConfiguration(c))) {
                 bootstrap();
             }
         },

@@ -1,4 +1,4 @@
-<div align="center" id="top"><img src="assets/logo.png" align="center" alt="markless" width="425"></div>
+<div align="center" id="top"><img src="assets/logo.png" align="center" alt="Mark 3" width="425"></div>
 
 <div align="center">
 
@@ -132,7 +132,7 @@ The parser follows the Github Flavoured Markdown (thus Commonmark) spec. It prev
 
 # **Extension Settings**
 
-Look under _Markless_ section to selectively turn off the eye candies.
+Look under _Mark 3_ section to selectively turn off the eye candies.
 
 <details>
 
@@ -207,11 +207,11 @@ Bracket pair colorizers interfere with the rendering. If you use one, install th
 
 # **Differences**
 
-|                                                                     | Markless | Typora |
-| ------------------------------------------------------------------- | -------- | ------ |
-| Vim bindings                                                        | ☑        |        |
-| Extensible                                                          | ☑        |        |
-| Open source                                                         | ☑        |        |
-| UI Polish                                                           | ▣        | ☑      |
-| Advanced CSS                                                        |          | ☑      |
-| iFrame embeds[\*](https://github.com/microsoft/vscode/issues/85682) |          | ☑      |
+|                                                                     | Mark 3 | Typora |
+| ------------------------------------------------------------------- | ------ | ------ |
+| Vim bindings                                                        | ☑      |        |
+| Extensible                                                          | ☑      |        |
+| Open source                                                         | ☑      |        |
+| UI Polish                                                           | ▣      | ☑      |
+| Advanced CSS                                                        |        | ☑      |
+| iFrame embeds[\*](https://github.com/microsoft/vscode/issues/85682) |        | ☑      |

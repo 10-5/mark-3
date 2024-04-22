@@ -157,7 +157,7 @@ The extension intelligently parses only the visible text for large files and emp
 
 ## Extension Settings
 
-Look under _Markless_ section to selectively turn off the eye candies.
+Look under _Mark 3_ section to selectively turn off the eye candies.
 
 <details>
 
@@ -231,10 +231,10 @@ Bracket pair colorizers interfere with the rendering. If you use one, install th
 
 ## <span id="differences">[↩](#typora)</span> Differences
 
-|              | Markless | Typora |
-| ------------ | -------- | ------ |
-| Vim bindings | ☑        |        |
-| Extensible   | ☑        |        |
-| Open source  | ☑        |        |
-| UI Polish    | ▣        | ☑      |
-| Advanced CSS |          | ☑      |
+|              | Mark 3 | Typora |
+| ------------ | ------ | ------ |
+| Vim bindings | ☑      |        |
+| Extensible   | ☑      |        |
+| Open source  | ☑      |        |
+| UI Polish    | ▣      | ☑      |
+| Advanced CSS |        | ☑      |
