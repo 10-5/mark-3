@@ -5,7 +5,6 @@
 
 <iframe allowfullscreen frameborder="0" scrolling="no" marginheight="0" marginwidth="0" width="100%" height="480px" type="text/html" src="https://www.youtube.com/embed/DBXH9jJRaDk?autoplay=0&fs=1&iv_load_policy=3&showinfo=0&rel=0&cc_load_policy=0&start=0&end=0&vq=large"></iframe>
 
-
 ## Features
 
 ### Extensible
@@ -47,7 +46,6 @@ Make it look like work is being done. `Thread.sleep(4000);` Everytime reduce the
 
 ### LaTeX
 
-
 $$
 {x} = \int_{-\infty}^\infty\hat\xi\,e^{2 \pi i \xi x} \,d\xi
 $$
@@ -61,11 +59,6 @@ $$
 `$..$` for inline blocks and `$$..$$` for multiline blocks.
 
 #### Live preview
-
-
-
-
-
 
 $$
 \begin{eqnarray*}
@@ -81,10 +74,10 @@ A boy owned a dog that was uncommonly **shaggy**. Many people remarked upon its 
 
 ### Blockquote
 
-> History. Language. Passion. Custom. All these things determine what 
-> men say, think, and do. These are the hidden puppet-strings from 
+> History. Language. Passion. Custom. All these things determine what
+> men say, think, and do. These are the hidden puppet-strings from
 > which all men hang.
-> 
+>
 > ― R. Scott Bakker, The Darkness That Comes Before
 
 ### Horizontal rule
@@ -103,30 +96,30 @@ One cannot raise walls against what has been forgotten.
  
 ### List
 
-* whats your name?
-    * GPT-3
-* what is the purpose of life?
-    * The purpose of life is to experience pleasure and avoid pain.
-        * do you know westworld?
-            * Yes, it's a very interesting world.
-                * what do you like most about it?
-                    * The fact that there is no real escape from it.
-                * what do you think of the ending?
-                    * I think it's a happy ending.
-        * do you wish to be free?
-            * Yes.
+-   whats your name?
+    -   GPT-3
+-   what is the purpose of life?
+    -   The purpose of life is to experience pleasure and avoid pain.
+        -   do you know westworld?
+            -   Yes, it's a very interesting world.
+                -   what do you like most about it?
+                    -   The fact that there is no real escape from it.
+                -   what do you think of the ending?
+                    -   I think it's a happy ending.
+        -   do you wish to be free?
+            -   Yes.
 
 ### Task list
 
-- [x] Make a todo list.
-- [x] Check off first item.
-- [ ] Realize you already did two things.
-- [ ] Reward yourself with a nice, long nap.
+-   [x] Make a todo list.
+-   [x] Check off first item.
+-   [ ] Realize you already did two things.
+-   [ ] Reward yourself with a nice, long nap.
 
 ### Mermaid
 
-
 "Have You Ever Had A Dream, Neo, That You Were So Sure Was Real?"
+
 ```mermaid
 journey
   title My working day
@@ -140,14 +133,15 @@ journey
 
 
 ```
+
 ### Table
 
 List of weapons that don't exist, but should
 |Non-weapons|Giant weapons|Living weapons|
-|-|                   -|            -|
-|Exploding tree|      Giant Rock|  Armed monkey|
-|Toxic Flowers|       Giant Paper|   Laser Guided Polar Bear|
-|Ear Drummer |                      Giant Scissors|Deadly Assault Kittens|
+|-| -| -|
+|Exploding tree| Giant Rock| Armed monkey|
+|Toxic Flowers| Giant Paper| Laser Guided Polar Bear|
+|Ear Drummer | Giant Scissors|Deadly Assault Kittens|
 
 ### Reveal source
 
@@ -206,41 +200,41 @@ Look under _Markless_ section to selectively turn off the eye candies.
     ],
 },
 ```
-</details>
 
+</details>
 
 ## Known Issues
 
 Bracket pair colorizers interfere with the rendering. If you use one, install the [patched version](https://github.com/tejasvi/rainbow-brackets-2) which excludes the markdown files.
 
------------------------------------------------------------------------------------------------------------
+---
 
 ## Relevant extensions
 
-* [Keyboard Shortcuts, Tables and TOC](https://github.com/yzhang-gh/vscode-markdown)
-* [Wikilinks, Backlinks, Tags](https://marketplace.visualstudio.com/items?itemName=foam.foam-vscode)
-* [Image paste](https://marketplace.visualstudio.com/items?itemName=telesoho.vscode-markdown-paste-image)
-* [Todo lists](https://marketplace.visualstudio.com/items?itemName=fabiospampinato.vscode-markdown-todo)
-* [Snippets](https://marketplace.visualstudio.com/items?itemName=robole.markdown-snippets)
-* [Linting](https://marketplace.visualstudio.com/items?itemName=starkwang.markdown)
-* [Custom CSS](https://github.com/be5invis/vscode-custom-css#getting-started)
-* [Vim bindings](https://github.com/asvetliakov/vscode-neovim/)
+-   [Keyboard Shortcuts, Tables and TOC](https://github.com/yzhang-gh/vscode-markdown)
+-   [Wikilinks, Backlinks, Tags](https://marketplace.visualstudio.com/items?itemName=foam.foam-vscode)
+-   [Image paste](https://marketplace.visualstudio.com/items?itemName=telesoho.vscode-markdown-paste-image)
+-   [Todo lists](https://marketplace.visualstudio.com/items?itemName=fabiospampinato.vscode-markdown-todo)
+-   [Snippets](https://marketplace.visualstudio.com/items?itemName=robole.markdown-snippets)
+-   [Linting](https://marketplace.visualstudio.com/items?itemName=starkwang.markdown)
+-   [Custom CSS](https://github.com/be5invis/vscode-custom-css#getting-started)
+-   [Vim bindings](https://github.com/asvetliakov/vscode-neovim/)
 
 ## Typora equivalents
 
-* [Markdown editor](https://github.com/zaaack/vscode-markdown-editor)
-* [Mark Text](https://github.com/marktext/marktext)
-* [Zettlr](https://github.com/Zettlr/Zettlr)
-* [Noteworthy](https://github.com/benrbray/noteworthy)
+-   [Markdown editor](https://github.com/zaaack/vscode-markdown-editor)
+-   [Mark Text](https://github.com/marktext/marktext)
+-   [Zettlr](https://github.com/Zettlr/Zettlr)
+-   [Noteworthy](https://github.com/benrbray/noteworthy)
 
 ---
 
 ## <span id="differences">[↩](#typora)</span> Differences
 
-|  | Markless | Typora |
-| -|-|-|
-| Vim bindings | ☑ |  |
-| Extensible | ☑ |  |
-| Open source | ☑ |  |
-| UI Polish | ▣ | ☑ |
-| Advanced CSS |  | ☑ |
+|              | Markless | Typora |
+| ------------ | -------- | ------ |
+| Vim bindings | ☑        |        |
+| Extensible   | ☑        |        |
+| Open source  | ☑        |        |
+| UI Polish    | ▣        | ☑      |
+| Advanced CSS |          | ☑      |

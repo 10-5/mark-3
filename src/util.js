@@ -1,28 +1,40 @@
 const vscode = require('vscode');
 
 function enableHoverImage(context) {
-    context.subscriptions.push(vscode.languages.registerHoverProvider('markdown', {
-        provideHover: (document, position) => {
-            const line = document.lineAt(position).text;
-            // console.log("HHOOVVEERR: ", line);
-            const regEx = /(!?)\[[^\]]*\]\((.+?)\)/g;
-            let match;
-            while ((match = regEx.exec(line))) {
-                // console.log("HHOOVVEERR: match ", match);
-                if (match.index - 1 <= position.character && position.character <= match.index + match[0].length) {
-                    const range = new vscode.Range(position.line, match.index, position.line, match.index + match[0].length + 1);
-                    const parsedUri = urlToUri(match[2]);
-                    if (match[1].length == 1) {
-                        return new vscode.Hover(new vscode.MarkdownString(`[![hoverPreview](${parsedUri})](${parsedUri})`), range);
-                    } else {
-                        return new vscode.Hover(new vscode.MarkdownString(`**[${match[2]}](${parsedUri})**`), range);
+    context.subscriptions.push(
+        vscode.languages.registerHoverProvider('markdown', {
+            provideHover: (document, position) => {
+                const line = document.lineAt(position).text;
+                // console.log("HHOOVVEERR: ", line);
+                const regEx = /(!?)\[[^\]]*\]\((.+?)\)/g;
+                let match;
+                while ((match = regEx.exec(line))) {
+                    // console.log("HHOOVVEERR: match ", match);
+                    if (match.index - 1 <= position.character && position.character <= match.index + match[0].length) {
+                        const range = new vscode.Range(
+                            position.line,
+                            match.index,
+                            position.line,
+                            match.index + match[0].length + 1
+                        );
+                        const parsedUri = urlToUri(match[2]);
+                        if (match[1].length == 1) {
+                            return new vscode.Hover(
+                                new vscode.MarkdownString(`[![hoverPreview](${parsedUri})](${parsedUri})`),
+                                range
+                            );
+                        } else {
+                            return new vscode.Hover(
+                                new vscode.MarkdownString(`**[${match[2]}](${parsedUri})**`),
+                                range
+                            );
+                        }
                     }
                 }
-            }
-        }
-    }));
+            },
+        })
+    );
 }
-
 
 const texToSvg = (() => {
     const { mathjax } = require('mathjax-full/js/mathjax.js');
@@ -38,11 +50,15 @@ const texToSvg = (() => {
         '[data-frame],[data-line]{stroke-width:70px;fill:none}',
         '.mjx-dashed{stroke-dasharray:140}',
         '.mjx-dotted{stroke-linecap:round;stroke-dasharray:0,140}',
-        'use[data-c]{stroke-width:3px}'
+        'use[data-c]{stroke-width:3px}',
     ].join('');
     const adaptor = liteAdaptor();
     RegisterHTMLHandler(adaptor);
-    const packages = { packages: AllPackages.sort().join(', ').split(/\s*,\s*/) };
+    const packages = {
+        packages: AllPackages.sort()
+            .join(', ')
+            .split(/\s*,\s*/),
+    };
 
     const tex = new TeX(packages);
     const svg = new SVG({ fontCache: 'local' });
@@ -52,15 +68,15 @@ const texToSvg = (() => {
         const node = html.convert(texString, { display: display });
         const attributes = node.children[0].attributes;
         if (height) {
-            attributes["width"] = `${parseFloat(attributes["width"]) * height / parseFloat(attributes["height"])}px`;
-            attributes["height"] = `${height}px`;
+            attributes['width'] = `${(parseFloat(attributes['width']) * height) / parseFloat(attributes['height'])}px`;
+            attributes['height'] = `${height}px`;
         }
-        attributes.preserveAspectRatio = "xMinYMin meet";
+        attributes.preserveAspectRatio = 'xMinYMin meet';
         // console.log(node);
         let svgElement = adaptor.innerHTML(node);
         svgElement = svgElement.replace(/<defs>/, `<defs><style>${CSS}</style>`);
         return svgElement;
-    }
+    };
 })();
 
 class DefaultMap extends Map {
@@ -93,21 +109,20 @@ function memoize(func) {
  * @param {string} url
  */
 function urlToUri(url) {
-    if (url.includes(":")) {
+    if (url.includes(':')) {
         if (url.match(/^[A-Z]:\\[^\\]/)) {
             return vscode.Uri.file(url);
         } else {
             return vscode.Uri.parse(url, true);
         }
-    } else if (url.startsWith("/")) {
+    } else if (url.startsWith('/')) {
         return vscode.Uri.file(url);
     } else {
         const workspaceFolders = vscode.workspace.workspaceFolders;
-        const cwd = workspaceFolders ? workspaceFolders[0].uri : vscode.Uri.file("/");
+        const cwd = workspaceFolders ? workspaceFolders[0].uri : vscode.Uri.file('/');
         return vscode.Uri.joinPath(cwd, url);
     }
 }
-
 
 function svgToUri(svg) {
     return `data:image/svg+xml;base64,${Buffer.from(svg).toString('base64')}`;
@@ -116,16 +131,15 @@ function svgToUri(svg) {
 function htmlToSvg(height, width, html, css) {
     return `
     <svg width="${width}" height="${height}" style="overflow: visible;" xmlns="http://www.w3.org/2000/svg"><foreignObject class="node" x="0" y="0" width="100%" height="100%"><body xmlns="http://www.w3.org/1999/xhtml">
-    <style>${css ? css : ""}</style>
+    <style>${css ? css : ''}</style>
     ${html}
-    </body></foreignObject></svg>`
+    </body></foreignObject></svg>`;
 }
 
 const parser = require('unified')()
     .use(require('remark-math'))
     .use(require('remark-parse'))
-    .use(require('remark-gfm'))
-    .parse;
+    .use(require('remark-gfm')).parse;
 
 const nodeToHtml = (() => {
     // Need

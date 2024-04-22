@@ -78,7 +78,6 @@ const types = undefined;
  */
 const autoImagePreview = undefined;
 
-
 /**
  * @type {import('vscode').CommentController}
  */
@@ -107,7 +106,7 @@ const state = {
     autoImagePreview,
     commentController,
     imageList,
-    changeRangeOffset
+    changeRangeOffset,
 };
 
 module.exports = { state };

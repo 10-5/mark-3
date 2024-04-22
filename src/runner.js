@@ -1,12 +1,12 @@
 const { state } = require('./state');
 const { parser, urlToUri, DefaultMap } = require('./util');
-const vscode = require('vscode')
+const vscode = require('vscode');
 
 const addInlineImages = (() => {
     class ImageComment {
         constructor(url) {
             this.mode = vscode.CommentMode.Preview;
-            this.author = { name: "" };
+            this.author = { name: '' };
             // console.log("Image comment: ", [url]);
             const parsedUri = urlToUri(url);
             // console.log("Image comment:", parsedUri);
@@ -29,7 +29,9 @@ const addInlineImages = (() => {
                 newImageThreadMap.set(key, lastImageThreadMap.get(key));
                 lastImageThreadMap.delete(key);
             } else {
-                const thread = state.commentController.createCommentThread(documentUri, matchRange, [new ImageComment(url)]);
+                const thread = state.commentController.createCommentThread(documentUri, matchRange, [
+                    new ImageComment(url),
+                ]);
                 thread.canReply = false;
                 if (state.autoImagePreview) {
                     thread.collapsibleState = vscode.CommentThreadCollapsibleState.Expanded;
@@ -74,36 +76,36 @@ function setDecorations() {
 async function visitNodes(node) {
     const stack = [[node, 0]];
     while (stack.length) {
-        let [curNode, listLevel] = stack.pop()
+        let [curNode, listLevel] = stack.pop();
         const dec = state.types.get(curNode.type);
         const position = curNode.position;
         if (dec) {
             await dec(position.start.offset, position.end.offset, curNode, listLevel);
-            if (curNode.type == "listItem") {
+            if (curNode.type == 'listItem') {
                 listLevel += 1;
             }
         }
         if (curNode.children) {
-            stack.push(...curNode.children.map(c => [c, listLevel]));
+            stack.push(...curNode.children.map((c) => [c, listLevel]));
         }
     }
 }
 
 function normalizeList() {
-    let prefix = "";
+    let prefix = '';
 
-    const regExPattern = "^( {2,})(\\*|\\d+(?:\\.|\\))|-|\\+) .";
-    const match = new RegExp(regExPattern, "m").exec(state.text);
+    const regExPattern = '^( {2,})(\\*|\\d+(?:\\.|\\))|-|\\+) .';
+    const match = new RegExp(regExPattern, 'm').exec(state.text);
     if (match) {
         let spacesPerLevel = 4;
-        const nextMatch = new RegExp(regExPattern.replace("2", String(match[1].length + 2)), "m").exec(state.text);
+        const nextMatch = new RegExp(regExPattern.replace('2', String(match[1].length + 2)), 'm').exec(state.text);
         if (nextMatch) {
             spacesPerLevel = nextMatch[1].length - match[1].length;
         }
         const maxLevel = Math.floor(match[1].length / spacesPerLevel);
-        const listItem = match[2].length > 1 ? "1. a\n" : "* a\n";
+        const listItem = match[2].length > 1 ? '1. a\n' : '* a\n';
         for (let level = 0; level < maxLevel; ++level) {
-            prefix += " ".repeat(spacesPerLevel * level) + listItem;
+            prefix += ' '.repeat(spacesPerLevel * level) + listItem;
         }
         prefix += '\n';
     }
@@ -118,7 +120,6 @@ function normalizeList() {
         state.text = prefix + state.text;
     }
 }
-
 
 // let rejectRender = ()=>{};
 /**
@@ -170,4 +171,4 @@ function triggerUpdateDecorations() {
     timeout = setTimeout(updateDecorations, 10);
 }
 
-module.exports = { triggerUpdateDecorations, addDecoration, posToRange }
+module.exports = { triggerUpdateDecorations, addDecoration, posToRange };

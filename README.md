@@ -3,6 +3,7 @@
 <div align="center">
 
 Inspired by Typora<sup>[diff](#differences)</sup>
+
 </div>
 
 Preview markdown inline and extend the capabilities through existing VS Code extensions.
@@ -11,32 +12,32 @@ Preview markdown inline and extend the capabilities through existing VS Code ext
 
 <summary>Contents</summary>
 
-- Features
-    - [**Headers**](#headers)
-    - [**URLs**](#urls)
-    - [**Images**](#images)
-      - [**Preview on hover**](#preview-on-hover)
-      - [**Preview inline**](#preview-inline)
-    - [**Inline code**](#inline-code)
-    - [**LaTeX**](#latex)
-      - [**Live preview**](#live-preview)
-    - [**Emphasis**](#emphasis)
-    - [**Blockquote**](#blockquote)
-    - [**Horizontal rule**](#horizontal-rule)
-    - [**HTML tags**](#html-tags)
-    - [**List**](#list)
-    - [**Task list**](#task-list)
-    - [**Mermaid**](#mermaid)
-    - [**Table**](#table)
-    - [**Reveal source**](#reveal-source)
-    - [**Performance**](#performance)
-    - [**Vim bindings**](#vim-bindings)
-    - [**Spec compliant**](#spec-compliant)
-- [**Extension Settings**](#extension-settings)
-- [**Known Issues**](#known-issues)
-- [**Relevant extensions**](#relevant-extensions)
-- [**Typora equivalents**](#typora-equivalents)
-- [**Differences**](#differences)
+-   Features
+    -   [**Headers**](#headers)
+    -   [**URLs**](#urls)
+    -   [**Images**](#images)
+        -   [**Preview on hover**](#preview-on-hover)
+        -   [**Preview inline**](#preview-inline)
+    -   [**Inline code**](#inline-code)
+    -   [**LaTeX**](#latex)
+        -   [**Live preview**](#live-preview)
+    -   [**Emphasis**](#emphasis)
+    -   [**Blockquote**](#blockquote)
+    -   [**Horizontal rule**](#horizontal-rule)
+    -   [**HTML tags**](#html-tags)
+    -   [**List**](#list)
+    -   [**Task list**](#task-list)
+    -   [**Mermaid**](#mermaid)
+    -   [**Table**](#table)
+    -   [**Reveal source**](#reveal-source)
+    -   [**Performance**](#performance)
+    -   [**Vim bindings**](#vim-bindings)
+    -   [**Spec compliant**](#spec-compliant)
+-   [**Extension Settings**](#extension-settings)
+-   [**Known Issues**](#known-issues)
+-   [**Relevant extensions**](#relevant-extensions)
+-   [**Typora equivalents**](#typora-equivalents)
+-   [**Differences**](#differences)
 </details>
 
 <div id="features"> </div>
@@ -90,7 +91,7 @@ Preview markdown inline and extend the capabilities through existing VS Code ext
 # **HTML tags**
 
 ![](assets/html.gif)
- 
+
 # **List**
 
 ![](assets/list.jpg)
@@ -174,43 +175,43 @@ Look under _Markless_ section to selectively turn off the eye candies.
     ],
 },
 ```
-</details>
 
+</details>
 
 # **Known Issues**
 
 Bracket pair colorizers interfere with the rendering. If you use one, install the [patched version](https://github.com/tejasvi/rainbow-brackets-2) which excludes the markdown files.
 
------------------------------------------------------------------------------------------------------------
+---
 
 # **Relevant extensions**
 
-* [Keyboard Shortcuts, Tables and TOC](https://github.com/yzhang-gh/vscode-markdown)
-* [Wikilinks, Backlinks, Tags](https://marketplace.visualstudio.com/items?itemName=foam.foam-vscode)
-* [Image paste](https://marketplace.visualstudio.com/items?itemName=telesoho.vscode-markdown-paste-image)
-* [Todo lists](https://marketplace.visualstudio.com/items?itemName=fabiospampinato.vscode-markdown-todo)
-* [Snippets](https://marketplace.visualstudio.com/items?itemName=robole.markdown-snippets)
-* [Linting](https://marketplace.visualstudio.com/items?itemName=starkwang.markdown)
-* [Custom CSS](https://github.com/be5invis/vscode-custom-css#getting-started)
-* [Vim bindings](https://github.com/asvetliakov/vscode-neovim/)
-* [One of yours](https://code.visualstudio.com/api/get-started/your-first-extension)
+-   [Keyboard Shortcuts, Tables and TOC](https://github.com/yzhang-gh/vscode-markdown)
+-   [Wikilinks, Backlinks, Tags](https://marketplace.visualstudio.com/items?itemName=foam.foam-vscode)
+-   [Image paste](https://marketplace.visualstudio.com/items?itemName=telesoho.vscode-markdown-paste-image)
+-   [Todo lists](https://marketplace.visualstudio.com/items?itemName=fabiospampinato.vscode-markdown-todo)
+-   [Snippets](https://marketplace.visualstudio.com/items?itemName=robole.markdown-snippets)
+-   [Linting](https://marketplace.visualstudio.com/items?itemName=starkwang.markdown)
+-   [Custom CSS](https://github.com/be5invis/vscode-custom-css#getting-started)
+-   [Vim bindings](https://github.com/asvetliakov/vscode-neovim/)
+-   [One of yours](https://code.visualstudio.com/api/get-started/your-first-extension)
 
 # **Typora equivalents**
 
-* [Markdown editor](https://github.com/zaaack/vscode-markdown-editor)
-* [Mark Text](https://github.com/marktext/marktext)
-* [Zettlr](https://github.com/Zettlr/Zettlr)
-* [Noteworthy](https://github.com/benrbray/noteworthy)
+-   [Markdown editor](https://github.com/zaaack/vscode-markdown-editor)
+-   [Mark Text](https://github.com/marktext/marktext)
+-   [Zettlr](https://github.com/Zettlr/Zettlr)
+-   [Noteworthy](https://github.com/benrbray/noteworthy)
 
 ---
 
 # **Differences**
 
-|  | Markless | Typora |
-| -|-|-|
-| Vim bindings | ☑ |  |
-| Extensible | ☑ |  |
-| Open source | ☑ |  |
-| UI Polish | ▣ | ☑ |
-| Advanced CSS |  | ☑ |
-| iFrame embeds[*](https://github.com/microsoft/vscode/issues/85682) |  | ☑ |
+|                                                                     | Markless | Typora |
+| ------------------------------------------------------------------- | -------- | ------ |
+| Vim bindings                                                        | ☑        |        |
+| Extensible                                                          | ☑        |        |
+| Open source                                                         | ☑        |        |
+| UI Polish                                                           | ▣        | ☑      |
+| Advanced CSS                                                        |          | ☑      |
+| iFrame embeds[\*](https://github.com/microsoft/vscode/issues/85682) |          | ☑      |
