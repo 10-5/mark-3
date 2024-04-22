@@ -242,21 +242,10 @@ function bootstrap(context) {
                     (() => {
                         const getBulletDecoration = memoize((level) => {
                             const listBullets = [
-                                '❧',
-                                '☯',
-                                '♠',
-                                '❀',
-                                '♚',
-                                '☬',
-                                '♣',
-                                '♥',
-                                '🙤',
-                                '⚜',
-                                '⚛',
-                                '⛇',
-                                '⚓',
-                                '☘',
-                                '☔',
+                                '🔶',
+                                '🔷',
+                                '🔸',
+                                '🔹',
                             ];
                             return vscode.window.createTextEditorDecorationType({
                                 color: 'transparent',
@@ -272,7 +261,7 @@ function bootstrap(context) {
                                 color: 'transparent',
                                 textDecoration: 'none; display: inline-block; width: 0;',
                                 after: {
-                                    contentText: checked ? '☑' : '☐',
+                                    contentText: checked ? '☑️' : '⬛',
                                     fontWeight: 'bold',
                                 },
                             });
