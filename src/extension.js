@@ -5,6 +5,11 @@ const { memoize, nodeToHtml, svgToUri, htmlToSvg, DefaultMap, texToSvg, enableHo
 const { triggerUpdateDecorations, addDecoration, posToRange } = require('./runner');
 const cheerio = require('cheerio');
 
+const listBullets = [
+    '●',
+    '○',
+];
+
 let config = vscode.workspace.getConfiguration('mark3');
 
 function enableLineRevealAsSignature(context) {
@@ -241,29 +246,35 @@ function bootstrap(context) {
                     'listItem',
                     (() => {
                         const getBulletDecoration = memoize((level) => {
-                            const listBullets = [
-                                '🔶',
-                                '🔷',
-                                '🔸',
-                                '🔹',
-                            ];
                             return vscode.window.createTextEditorDecorationType({
                                 color: 'transparent',
-                                textDecoration: 'none; display: inline-block; width: 0;',
-                                after: {
+                                textDecoration: 'none; display: inline-block;',
+                                before: {
                                     contentText: listBullets[level % listBullets.length],
                                     fontWeight: 'bold',
+                                    width: '30px',
+                                    margin: '0 -30px 0 0',
                                 },
                             });
                         });
-                        const getCheckedDecoration = memoize((checked) => {
+                        const getCheckedDecoration = memoize((level, checked) => {
                             return vscode.window.createTextEditorDecorationType({
+                                opacity: (checked ? '0.5' : ''),
                                 color: 'transparent',
-                                textDecoration: 'none; display: inline-block; width: 0;',
-                                after: {
-                                    contentText: checked ? '☑️' : '⬛',
-                                    fontWeight: 'bold',
+                                textDecoration: 'none; display: inline-block;',
+                                before: {
+                                    opacity: (checked ? '0.5' : ''),
+                                    contentText: listBullets[level % listBullets.length] + '\u00a0\u00a0\u00a0' + (checked ? '☑️' : '☐'), // ☑
+                                    // contentText: (checked ? '☑️DONE' : '☐TODO'), // ☑
+                                    color: (checked ? '#888' : ''),
+                                    width: '60px',
+                                    margin: '0 -60px 0 0',
                                 },
+                            });
+                        });
+                        const getDoneDecoration = memoize(() => {
+                            return vscode.window.createTextEditorDecorationType({
+                                opacity: '0.5',
                             });
                         });
                         const getlistRainbowDecoration = (() => {
@@ -289,11 +300,14 @@ function bootstrap(context) {
                             addDecoration(
                                 node.checked == null
                                     ? getBulletDecoration(listLevel)
-                                    : getCheckedDecoration(node.checked),
+                                    : getCheckedDecoration(listLevel, node.checked),
                                 start,
                                 textStart - 1
                             );
-                            addDecoration(getlistRainbowDecoration(listLevel), textStart, textEnd);
+                            // addDecoration(getlistRainbowDecoration(listLevel), textStart, textEnd);
+                            if (node.checked) {
+                                addDecoration(getDoneDecoration(), textStart, textEnd);
+                            }
                         };
                     })(),
                 ],
