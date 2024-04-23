@@ -3,7 +3,7 @@
     "publisher": "10-5",
     "displayName": "Mark 3",
     "description": "Inline markdown preview.  Vim mode and WYSIWYG mermaid, latex and image rendering.",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "engines": {
         "vscode": "^1.88.0"
     },
